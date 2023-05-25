@@ -1,0 +1,141 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background: var(--Very-dark-blue);
+    font-family: 'Lexend Deca', sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+:root{
+    --Very-dark-blue : hsl(233, 47%, 7%);
+    --Dark-desaturated-blue : hsl(244, 38%, 16%);
+    --Soft-violet : hsl(277, 64%, 61%);
+    --White : hsl(0, 0%, 100%);
+    --Slightly-transparent-white : hsla(0, 0%, 100%, 0.75);
+    --Slightly-transparent-white2 : hsla(0, 0%, 100%, 0.6);
+
+}
+
+.container{
+    max-width: 80%;
+    display: flex;
+    background: var(--Dark-desaturated-blue);
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.container .content{
+    margin: 50px auto;
+    max-width: 40%;
+}
+
+.content>h1{
+    font-size: 3rem;
+    color: var(--White);
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 30px;
+}
+
+h1 span{
+    color: var(--Soft-violet);
+}
+
+.content>p{
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.75;
+    color: var(--Slightly-transparent-white);
+    margin-bottom: 80px;
+}
+
+.content .comtemque{
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    text-transform: uppercase;
+}
+
+.comtemque h1{
+    color: var(--White);
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+}
+
+.comtemque p{
+    color: var(--Slightly-transparent-white2);
+}
+
+.container .header-img{
+    width: 50%;
+    position: relative;
+    /* isolation: isolate; */
+}
+
+.container .header-img::before{
+content: '';
+position: absolute;
+inset: 0;
+background-color: hsla(277, 64%, 61%, 0.35);;
+}
+
+.header-img img.desktop{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+
+.header-img img.mobile{
+    display: none;
+}
+
+
+/* For mobile view(width=375px) */
+@media(max-width:600px){
+    body{
+        height: auto;
+     }
+
+    .container{
+        max-width: 90%;
+        flex-direction: column-reverse;
+        margin: 50px auto;
+    } 
+
+    .container .content{
+        max-width: 90%;
+        text-align: center;
+    }
+
+    .content>h1{
+        font-size: 2.5rem;
+    }
+    
+    .container .header-img{
+    width: 100%;
+    }
+
+    .header-img img.desktop{
+        display: none;
+    }
+
+    .header-img img.mobile{
+     display: block;
+      width:100%;
+      height:100%;
+    }
+
+    .content .comtemque{
+        flex-direction: column;
+        gap: 50px;
+    }
+   
+  
+}
