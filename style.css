@@ -35,7 +35,6 @@ main{
     border-radius: 8px;
 } 
  .container .content{
-    max-width: 50%;
     min-height: 75%;
     margin-left: 65px;
 }
